@@ -1,0 +1,27 @@
+{
+  "name": "Polite-ical",
+  "description": "Removes offense political comments from the page.",
+  "version": "1.0",
+  "content_scripts": 
+    [
+        {
+            "matches": ["<all_urls>"],
+            "js":["jquery.js", "main.js"],
+            "run_at": "document_end",
+			"all_frames":true
+        }
+    ],
+  "options_page": "options.html",
+  "web_accessible_resources": ["nazi.gif"],
+  "permissions": [
+    "activeTab", "storage"
+  ],
+  "background": {
+    "scripts": ["jquery.js", "main.js", "background.js"],    "persistent": false,
+	"permissions": ["tabs", "http://*/*", "https://*/*"]
+  },
+  "browser_action": {
+    "default_title": "Removes stupidity from the page."
+  },
+  "manifest_version": 2
+}

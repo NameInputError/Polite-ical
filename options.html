@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<body>
+Select your political affiliation:<br>
+<form id="affil">
+  <input type="checkbox" value="liberal" id="liberal" ><span>Liberal</span><br>
+  <input type="checkbox" value="conservative" id="conservative"><span>Conservative</span><br>
+</form>
+<script src="options.js"></script>
+<br>
+Choose what you would like to see in place of offensive comments:
+<select id="msg">
+  <option value="blank">Blank</option>
+  <option value="coulter">I Hate America</option>
+  <option value="classic">Classic</option>
+  <option value="cMsg" id="customSelect">Custom Message</option>
+  <option value="cImg" id="customSelect">Custom Picture</option>
+  <input type="text" id="customMsg">
+  <input type="file" id="imgfile" name="imgfile" />
+  <output id="list"></output>
+</select>
+ <br>
+ <img src="" id="picture">
+ <br>
+ <span id="hateAmerica"></span>
+
+ Additional words you would like to flag:
+ 
+<input type="text" id="cFlag" class="cFlags"> 
+
+<button id="cWords">Add Another</button>
+<br>
+<div id="status"></div>
+<button id="save">Save</button>
+
+
+<script src="options.js"></script>
+</body>
+</html>
