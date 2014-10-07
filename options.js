@@ -47,6 +47,7 @@ function save_options() {
   var msg = document.getElementById('msg').value;
   var customElements = document.getElementsByClassName('cFlags');
   var customArray = [];
+  
   if (msg == 'cMsg') {
 	  msg = document.getElementById('customMsg').value;
 	}
@@ -82,19 +83,6 @@ function save_options() {
   });
 }
 
-// Restores select box and checkbox state using the preferences
-// stored in chrome.storage.
-function restore_options() {
-  // Use default value color = 'red' and likesColor = true.
-  chrome.storage.sync.get({
-    bubbleStatus: "cheese",
-    bubbleMsg: "I hate America."
-  }, function(items) {
-    document.getElementById('color').value = items.favoriteColor;
-    document.getElementById('like').checked = items.likesColor;
-  });
-}
-
 window.onload = function()
 {
     document.getElementById('save').addEventListener('click', save_options);
@@ -121,18 +109,13 @@ document.getElementById('cWords').addEventListener('click', function() {
 
 
 function getBase64Image(img) {
-    // Create an empty canvas element
     var canvas = document.createElement("canvas");
     canvas.width = img.width;
     canvas.height = img.height;
 
-    // Copy the image contents to the canvas
     var ctx = canvas.getContext("2d");
     ctx.drawImage(img, 0, 0);
 
-    // Get the data-URL formatted image
-    // Firefox supports PNG and JPEG. You could check img.src to guess the
-    // original format, but be aware the using "image/jpg" will re-encode the image.
     var dataURL = canvas.toDataURL("image/png");
 
     return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");

@@ -136,13 +136,6 @@ function letTheCleansingBegin(cType) {
 		});
 		
 		$(cType + ":contains('liberal')").each(function() {
-			if ($(this).html().indexOf("I ") >= 0) {
-				$(this).text(msg);
-				if (img) {
-					$(this).append(image);
-				}
-			}
-			
 			if ($(this).html().indexOf("retard") >= 0) {
 				$(this).text(msg);
 				if (img) {
@@ -379,8 +372,7 @@ function letTheCleansingBegin(cType) {
 	
 	for (i = 0; i < cWords.length; i++) {
 		var word = cWords[i];
-		console.log(cWords.length);
-		console.log(word);
+		
 		$(cType + ":contains('" + word + "')").each(function() {
 			$(this).text(msg);
 			if (img) {
@@ -408,7 +400,7 @@ function main() {
 	
 	var site = window.location.href;
 	callHandler(site);
-	/* for ajax content with variable loading times*/
+	// for ajax content with variable loading times
 	$(document).on( "click", function() {
 		if (stopParse == true) { 
 		return; 
